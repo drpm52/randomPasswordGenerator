@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Password Generator</title>
+
+    <!-- font awesome -->
     <link rel="icon" type="image/png" href="favicon.png" />
     <link
       rel="stylesheet"
@@ -14,45 +16,64 @@
       src="https://kit.fontawesome.com/42cce14348.js"
       crossorigin="anonymous"
     ></script>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- dark and loght switch
+    
+    -->
     <div class="theme-switch-wrapper">
-        <span id="toggle-icon">
-          <span class="toggle-text">Light Mode</span>
-          <i class="fa-solid fa-sun" ></i>
-        </span>
-        <label  class="theme-switch">
-          <input type="checkbox">
-          <div class="slider round"></div>
-        </label>
+      <span id="toggle-icon">
+        <span class="toggle-text">Light Mode</span>
+        <i class="fa-solid fa-sun"></i>
+      </span>
+      <label class="theme-switch">
+        <input type="checkbox" />
+        <div class="slider round"></div>
+      </label>
+    </div>
+    <div class="container large row">
+      <!-- /Inner container  -->
+      <div class="container small col">
+        <div class="container-small-top col">
+          <h1>Generate a <br /><span>random password</span></h1>
+          <h4>Never use an unsafe password again</h4>
+          <button class="password-generator">Generate passwords</button>
+          <input
+            class="input-text"
+            type="text"
+            placeholder="Enter the number of Characters"
+          />
+
+          <!-- copy on click , how -->
+        </div>
+        <p class="line row center gap">
+          ______________________________________
+        </p>
+
+        <div class="container-small-middle">
+          <div class="container-small-middle-left row gap">
+            <p class="middle-left password">bla</p>
+            <p class="middle-right password">bla</p>
+          </div>
+        </div>
+
+        <!-- adding additional charcters  -->
+        <!-- or toggle symbols if the user wants numbers or symbols on or off -->
+        <div class="container-small-lower row gap">
+          <button class="lower">add symbols</button>
+
+          <button class="lower">add numbers</button>
+        </div>
       </div>
-    <div class="container-small">
-        <div class="container-small-top">
-            <h1>Generate a  <br><span>random password</span></h1>
-        <p>Never use an unsafe password again</p>
-       <button class="password-generator">Generate passwords</button>
-        </div>
-   <hr>
-
-    <div class="container-small-middle">
-        <div class="container-small-middle-left">
-        <p class="middle"></p>
-        <p class="middle"></p>
-
-        </div>
     </div>
-     <div class="container-small-lower">
-        <button class="lower">add special character</button>
-        <button class="lower">add upper case letter</button>
-        <button class="lower">add lower case letter</button>
-        <button class="lower">add number</button>
-     </div>   
-    </div>
-</div>
 
-   
     <script defer src="script.js"></script>
-</body>
+  </body>
 </html>
