@@ -129,81 +129,98 @@ const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 let passcode1 = [];
 let passcode2 = [];
-let numberOfCharactersEl = document.querySelector(".input-text")
+let numberOfCharactersEl = document.querySelector(".input-text");
 const pw1El = document.querySelector(".middle-left");
 
 const pw2El = document.querySelector(".middle-right");
 
 const passwordGeneratorBtn = document.querySelector(".password-generator");
-const pwRight = document.querySelector(".middle-right");
-const pwLeft = document.querySelector(".middle-left");
+
+const symbolsBtn = document.getElementById("symbol");
+const numbersBtn = document.getElementById("number");
+
+
 
 function createPasscode() {
-    passcode1=[];
-    passcode2= [];
+  passcode1 = [];
+  passcode2 = [];
   let numberOfCharacters = numberOfCharactersEl.value
     ? numberOfCharactersEl.value
     : 12;
 
-  while (passcode1.length < numberOfCharacters ) {
+  while (passcode1.length < numberOfCharacters) {
     let randomIndex = Math.floor(Math.random() * characters.length);
     let randomCharacter = characters[randomIndex];
 
-    if (!passcode1.includes(randomCharacter) ) {
+    if (!passcode1.includes(randomCharacter)) {
       passcode1.push(randomCharacter);
-      pw1El.textContent = passcode1.join("");}
-
-
-      while (passcode2.length < numberOfCharacters )
-      {let randomIndex2 = Math.floor(Math.random() * characters.length);
-      let randomCharacter2 = characters[randomIndex2];
-      if (!passcode2.includes(randomCharacter2) ) {
-        passcode2.push(randomCharacter2);
-       
-        
-      pw2El.textContent = passcode2.join("");}
+      pw1El.textContent = passcode1.join("");
     }
-    
 
-  
-       
-       
-    
-   
-  }}
-  async function copyPw (whichpw) {
-  //  whichpw.value.select();
-  //   whichpw.setSelectionRange(0, 999999);
-  console.log("i was clicked")
-     console.log(await navigator.clipboard.writeText(whichpw.textContent));
-    alert(`Copied the text: ${whichpw.textContent}` )
+    while (passcode2.length < numberOfCharacters) {
+      let randomIndex2 = Math.floor(Math.random() * characters.length);
+      let randomCharacter2 = characters[randomIndex2];
+      if (!passcode2.includes(randomCharacter2)) {
+        passcode2.push(randomCharacter2);
+
+        pw2El.textContent = passcode2.join("");
+      }
+    }
   }
+}
 
-  // function copyPw (){
-  //   function myFunction() {
-          // Get the text field
-    //      var copyText = document.getElementById("myInput");
-        
-    //       // Select the text field
-    //    copyText.select(); 
-    //      copyText.setSelectionRange(0, 99999); // For mobile devices
-        
-    //        // Copy the text inside the text field
-    //      navigator.clipboard.writeText(copyText.value);
-        
-    //       // Alert the copied text
-    //      alert("Copied the text: " + copyText.value);
-        // }
+function generateCharcters(arr){
+
+  let randomIndex = Math.floor(Math.random() * arr.length)
+  let randomIndex2 = Math.floor(Math.random() * arr.length);
+
+  pw1El.textContent += arr[randomIndex];
+  
+  pw2El.textContent += arr[randomIndex2];
+
+}
+
+
+
+
+async function copyPw(whichpw) {
+  //  whichpw.textContent.select();
+  //   whichpw.setSelectionRange(0, 999999);
+
+  console.log(await navigator.clipboard.writeText(whichpw.textContent));
+  alert(`Copied the text: ${whichpw.textContent}`);
+} // Get the text field
+
+// function copyPw (){
+//   function myFunction() {
+//      var copyText = document.getElementById("myInput");
+
+//       // Select the text field
+//    copyText.select();
+//      copyText.setSelectionRange(0, 99999); // For mobile devices
+
+//        // Copy the text inside the text field
+//      navigator.clipboard.writeText(copyText.value);
+
+//       // Alert the copied text
+//      alert("Copied the text: " + copyText.value);
+// }
 //   }
-    
+
 // }
 
 passwordGeneratorBtn.addEventListener("click", createPasscode);
-pw1El.addEventListener('click', function(){
-  copyPw(pwLeft)
+pw1El.addEventListener("click", function () {
+  copyPw(pw1El);
+});
+pw2El.addEventListener("click", function () {
+  copyPw(pw2El);
+});
+
+symbolsBtn.addEventListener("click", function(){
+  generateCharcters(symbols)
 })
-pw2El.addEventListener('click', function(){
-  copyPw(pwRight)})
-
-
-
+numbersBtn.addEventListener("click", function(){
+  generateCharcters(numbers)
+}
+)
