@@ -116,3 +116,12 @@ button:focus{
 
 
 
+@media (max-width:500px){
+  html{
+    font-size: 10px;
+  }
+  .container-small-middle-left{
+    align-items: center;
+  justify-content: center;
+  }
+}
