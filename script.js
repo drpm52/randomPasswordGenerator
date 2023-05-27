@@ -129,11 +129,14 @@ const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 let passcode1 = [];
 let passcode2 = [];
-let numberOfCharactersEl = document.querySelector(".input-text");
-let pw1El = document.querySelector(".middle-left");
-let pw2El = document.querySelector(".middle-right");
+let numberOfCharactersEl = document.querySelector(".input-text")
+const pw1El = document.querySelector(".middle-left");
 
-let passwordGeneratorBtn = document.querySelector(".password-generator");
+const pw2El = document.querySelector(".middle-right");
+
+const passwordGeneratorBtn = document.querySelector(".password-generator");
+const pwRight = document.querySelector(".middle-right");
+const pwLeft = document.querySelector(".middle-left");
 
 function createPasscode() {
     passcode1=[];
@@ -167,10 +170,17 @@ function createPasscode() {
        
     
    
+  }}
+  async function copyPw (whichpw) {
+  //  whichpw.value.select();
+  //   whichpw.setSelectionRange(0, 999999);
+  console.log("i was clicked")
+     console.log(await navigator.clipboard.writeText(whichpw.textContent));
+    alert(`Copied the text: ${whichpw.textContent}` )
   }
-  
-  function copyPw (){
-    function myFunction() {
+
+  // function copyPw (){
+  //   function myFunction() {
           // Get the text field
     //      var copyText = document.getElementById("myInput");
         
@@ -183,14 +193,17 @@ function createPasscode() {
         
     //       // Alert the copied text
     //      alert("Copied the text: " + copyText.value);
-        }
-  }
+        // }
+//   }
     
-}
+// }
 
 passwordGeneratorBtn.addEventListener("click", createPasscode);
-pw1El.addEventListener('click', copyPw)
-pw2El.addEventListener('click', copyPw)
+pw1El.addEventListener('click', function(){
+  copyPw(pwLeft)
+})
+pw2El.addEventListener('click', function(){
+  copyPw(pwRight)})
 
 
 
