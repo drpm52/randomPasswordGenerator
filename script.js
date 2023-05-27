@@ -169,13 +169,19 @@ function createPasscode() {
   }
 }
 
-function generateSymbols(){
-  pw
+function generateCharcters(arr){
+
+  let randomIndex = Math.floor(Math.random() * arr.length)
+  let randomIndex2 = Math.floor(Math.random() * arr.length);
+
+  pw1El.textContent += arr[randomIndex];
+  
+  pw2El.textContent += arr[randomIndex2];
 
 }
-function generateNumbers(){
-  console.log("click numbers");
-}
+
+
+
 
 async function copyPw(whichpw) {
   //  whichpw.textContent.select();
@@ -211,5 +217,10 @@ pw2El.addEventListener("click", function () {
   copyPw(pw2El);
 });
 
-symbolsBtn.addEventListener("click", generateSymbols)
-numbersBtn.addEventListener("click", generateNumbers)
+symbolsBtn.addEventListener("click", function(){
+  generateCharcters(symbols)
+})
+numbersBtn.addEventListener("click", function(){
+  generateCharcters(numbers)
+}
+)
