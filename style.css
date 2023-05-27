@@ -112,7 +112,7 @@ span{
   }
   .small{
     background-color:#F58A8A ;
-    margin: 0 auto;
+    margin:0 auto;
     padding:3rem;
     width:80%;
    
@@ -172,13 +172,13 @@ span{
     justify-self: flex-start;
   }
   .line{
-    font-weight:100;
-    color: #177373 ;
-    /* display:block;
-    /* width:100%; */
+    
+   
+    border:solid .5px #177373 ;
+   
     margin:1em auto;
-    padding:0;
-    width:95%;
+    width:100%;
+  
      
 
   }
@@ -195,3 +195,5 @@ span{
     border-radius:5px ;
   }
  
+  /* Dark Mode colors */
+
