@@ -23,23 +23,26 @@ color:#177373;
 
 .large{
   background: linear-gradient(rgba(23,115,115,.64), rgba(242, 119,119,.28));
-  width:60%;
+
  margin: 5em auto;
-  padding:1em;
+  padding:2em;
   justify-content: center;
   align-items: center;
 }
 .small{
   background-color:#F58A8A ;
-  margin:0 auto;
+ 
   padding:3rem;
-  width:80%;
+ max-width: 400px;
+ max-height: 400px;
+ margin:1em;
  
   
  
 }
 .container{
-  max-width: 1200px;
+  max-width: 600px;
+  max-height: 600px;
   
  
   
@@ -60,7 +63,7 @@ h4{
 
 }
 .input-text  {
-  font-weight: extra-light;
+  font-weight: 100;
 }
 .gap{gap:1em;}
 .large, .small,.middle{
@@ -119,9 +122,17 @@ button:focus{
 @media (max-width:500px){
   html{
     font-size: 10px;
+  }}
+
+  @media (max-width:400px){
+    .container-small-middle-left{
+      align-items: center;
+    justify-content: center;
+    }
   }
-  .container-small-middle-left{
-    align-items: center;
-  justify-content: center;
+ @media (min-width:1000px) {
+  html{
+    font-size: 38;
   }
-}
+  
+ }
